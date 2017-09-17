@@ -1,334 +1,385 @@
 import random
 
-Erfs = {
-    '1': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['1_4','1_5'],
-    'Harbour': None
-    },
+erfs = {
+    '1':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['1_5', '1_4'],
+         'harbour': None
+         },
 
-    '2': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['2_5','2_6'],
-    'Harbour': None
-    },
-    '3': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['3_6','3_7'],
-    'Harbour': None
-    },
-    '4': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['4_1','4_8'],
-    'Harbour': None
-    },
-    '5': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['5_1','5_2','5_9'],
-    'Harbour': None
-    },
-    '6': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['2_6','3_6','6_10'],
-    'Harbour': None
-    },
-    '7': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['3_7','7_11'],
-    'Harbour': None
-    },
-    '8': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['4_8','8_12','8_13'],
-    'Harbour': None
-    },
-    '9': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['5_9','9_13','9_14'],
-    'Harbour': None
-    },
-    '10': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['6_10','10_14','10_15'],
-    'Harbour': None
-    },
-    '11': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['7_11','11_15','11_16'],
-    'Harbour': None
-    },
-    '12': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['8_12','12_17'],
-    'Harbour': None
-    },
-    '13': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['8_13','9_13','13_18'],
-    'Harbour': None
-    },
-    '14': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['9_14','10_14', '14_19'],
-    'Harbour': None
-    },
-    '15': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['10_15','11_15','15_20'],
-    'Harbour': None
-    },
-    '16': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['11_16','16_21'],
-    'Harbour': None
-    },
-    '17': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['12_17','17_22', '17_23'],
-    'Harbour': None
-    },
-    '18': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['13_18','18_23','18_24'],
-    'Harbour': None
-    },
-    '19': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['14_19','19_24','19_25'],
-    'Harbour': None
-    },
-    '20': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['15_20','20_25','20_26'],
-    'Harbour': None
-    },
-    '21': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['16_21','21_26','21_27'],
-    'Harbour': None
-    },
-    '22': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['17_22','17_23'],
-    'Harbour': None
-    },
-    '23': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['17_23','18_23','23_29'],
-    'Harbour': None
-    },
-    '24': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['18_24','19_24','24_30'],
-    'Harbour': None
-    },
-    '25': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['19_25', '20_25', '25_31'],
-    'Harbour': None
-    },
-    '26': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['20_26', '21_26','26_32'],
-    'Harbour': None
-    },
-    '27': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['21_27', '27_33'],
-    'Harbour': None
-    },
-    '28': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['22_28', '28_34'],
-    'Harbour': None
-    },
-    '29': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['23_29', '29_34', '29_35'],
-    'Harbour': None
-    },
-    '30': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['24_30', '30_35', '30_36'],
-    'Harbour': None
-    },
-    '31': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['25_31', '31_36', '31_37'],
-    'Harbour': None
-    },
-    '32': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['26_32','32_37', '32_38'],
-    'Harbour': None
-    },
-    '33': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['27_33', '33_38'],
-    'Harbour': None
-    },
-    '34': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['28_34', '29_34', '34_39'],
-    'Harbour': None
-    },
-    '35': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['29_35', '30_35', '35_40'],
-    'Harbour': None
-    },
-    '36': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['30_36', '31_36', '36_41'],
-    'Harbour': None
-    },
-    '37': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['31_37','32_37', '37_42'],
-    'Harbour': None
-    },
-    '38': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['32_38', '33_38', '38_43'],
-    'Harbour': None
-    },
-    '39': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['34_39','39_44'],
-    'Harbour': None
-    },
-    '40': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['35_40', '40_44', '40_45'],
-    'Harbour': None
-    },
-    '41': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['36_41', '41_45','41_46'],
-    'Harbour': None
-    },
-    '42': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['37_42', '42_46', '42_47'],
-    'Harbour': None
-    },
-    '43': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['38_43', '43_47'],
-    'Harbour': None
-    },
-    '44': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['39_44', '40_44', '44_48'],
-    'Harbour': None
-    },
-    '45': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['40_45', '41_45', '45_49', ],
-    'Harbour': None
-    },
-    '46': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['41_46', '42_46','46_50'],
-    'Harbour': None
-    },
-    '47': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['42_47','43_47', '47_51'],
-    'Harbour': None
-    },
-    '48': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['44_48', '48_52'],
-    'Harbour': None
-    },
-    '49': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['45_49','49_52','49_53'],
-    'Harbour': None
-    },
-    '50': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['46_50', '50_53', '50_54'],
-    'Harbour': None
-    },
-    '51': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['47_51', '51_54'],
-    'Harbour': None
-    },
-    '52': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['48_52', '49_52'],
-    'Harbour': None
-    },
-    '53': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['49_53', '50_53'],
-    'Harbour': None
-    },
-    '54': {
-    'house': None,
-    'city': None,
-    'connected_roads': ['50_54','51_54'],
-    'Harbour': None
-    }
-}
+    '2':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['2_5', '2_6'],
+         'harbour': None
+         },
 
-Blokke = {
+    '3':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['3_7', '3_6'],
+         'harbour': None
+         },
+
+    '4':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['1_4', '4_8'],
+         'harbour': None
+         },
+
+    '5':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['1_5', '2_5', '5_9'],
+         'harbour': None
+         },
+
+    '6':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['3_6', '2_6', '6_10'],
+         'harbour': None
+         },
+
+    '7':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['3_7', '7_11'],
+         'harbour': None
+         },
+
+    '8':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['8_12', '8_13', '4_8'],
+         'harbour': None
+         },
+
+    '9':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['5_9', '9_13', '9_14'],
+         'harbour': None
+         },
+
+    '10':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['10_14', '10_15', '6_10'],
+         'harbour': None
+         },
+
+    '11':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['7_11', '11_16', '11_15'],
+         'harbour': None
+         },
+
+    '12':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['8_12', '12_17'],
+         'harbour': None
+         },
+
+    '13':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['8_13', '13_18', '9_13'],
+         'harbour': None
+         },
+
+    '14':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['14_19', '10_14', '9_14'],
+         'harbour': None
+         },
+
+    '15':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['10_15', '15_20', '11_15'],
+         'harbour': None
+         },
+
+    '16':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['16_21', '11_16'],
+         'harbour': None
+         },
+
+    '17':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['17_23', '12_17', '17_22'],
+         'harbour': None
+         },
+
+    '18':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['13_18', '18_24', '18_23'],
+         'harbour': None
+         },
+
+    '19':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['19_24', '19_25', '14_19'],
+         'harbour': None
+         },
+
+    '20':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['20_26', '20_25', '15_20'],
+         'harbour': None
+         },
+
+    '21':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['21_27', '21_26', '16_21'],
+         'harbour': None
+         },
+
+    '22':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['22_28', '17_22'],
+         'harbour': None
+         },
+
+    '23':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['23_29', '17_23', '18_23'],
+         'harbour': None
+         },
+
+    '24':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['19_24', '18_24', '24_30'],
+         'harbour': None
+         },
+
+    '25':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['19_25', '25_31', '20_25'],
+         'harbour': None
+         },
+
+    '26':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['21_26', '20_26', '26_32'],
+         'harbour': None
+         },
+
+    '27':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['21_27', '27_33'],
+         'harbour': None
+         },
+
+    '28':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['28_34', '22_28'],
+         'harbour': None
+         },
+
+    '29':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['23_29', '29_34', '29_35'],
+         'harbour': None
+         },
+
+    '30':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['24_30', '30_35', '30_36'],
+         'harbour': None
+         },
+
+    '31':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['25_31', '31_37', '31_36'],
+         'harbour': None
+         },
+
+    '32':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['32_38', '26_32'],
+         'harbour': None
+         },
+
+    '33':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['27_33', '33_38'],
+         'harbour': None
+         },
+
+    '34':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['28_34', '34_39', '29_34'],
+         'harbour': None
+         },
+
+    '35':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['35_40', '30_35', '29_35'],
+         'harbour': None
+         },
+
+    '36':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['31_36', '30_36', '36_41'],
+         'harbour': None
+         },
+
+    '37':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['37_42', '31_37'],
+         'harbour': None
+         },
+
+    '38':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['32_38', '38_43', '33_38'],
+         'harbour': None
+         },
+
+    '39':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['39_44', '34_39'],
+         'harbour': None
+         },
+
+    '40':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['35_40', '40_44', '40_45'],
+         'harbour': None
+         },
+
+    '41':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['41_45', '41_46', '36_41'],
+         'harbour': None
+         },
+
+    '42':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['37_42', '42_47', '42_46'],
+         'harbour': None
+         },
+
+    '43':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['43_47', '38_43'],
+         'harbour': None
+         },
+
+    '44':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['44_48', '39_44', '40_44'],
+         'harbour': None
+         },
+
+    '45':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['41_45', '40_45', '45_49'],
+         'harbour': None
+         },
+
+    '46':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['46_50', '41_46', '42_46'],
+         'harbour': None
+         },
+
+    '47':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['43_47', '47_51', '42_47'],
+         'harbour': None
+         },
+
+    '48':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['44_48', '48_52'],
+         'harbour': None
+         },
+
+    '49':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['49_52', '49_53', '45_49'],
+         'harbour': None
+         },
+
+    '50':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['46_50', '50_54', '50_53'],
+         'harbour': None
+         },
+
+    '51':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['51_54', '47_51'],
+         'harbour': None
+         },
+
+    '52':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['49_52', '48_52'],
+         'harbour': None
+         },
+
+    '53':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['50_53', '49_53'],
+         'harbour': None
+         },
+
+    '54':
+        {'house': None,
+         'city': None,
+         'connected_roads': ['51_54', '50_54'],
+         'harbour': None
+         }}
+
+blokke = {
     'A': {'number': None,
           'resource': None,
           'robber': None,
@@ -422,80 +473,80 @@ Blokke = {
     'S': {'number': None,
           'resource': None,
           'robber': None,
-          'erfs': ['42', '46', '47', '50', '51', '54']},
+          'erfs': ['42', '46', '47', '50', '51', '54']}
 
 }
 
 roads = {
-    "1_4": {'Built': None, 'connected_roads':[]},
-    "1_5": {'Built': None, 'connected_roads':[]},
-    "2_5": {'Built': None, 'connected_roads':[]},
-    "2_6": {'Built': None, 'connected_roads':[]},
-    "3_6": {'Built': None, 'connected_roads':[]},
-    "3_7": {'Built': None, 'connected_roads':[]},
-    "4_8": {'Built': None, 'connected_roads':[]},
-    "5_9": {'Built': None, 'connected_roads':[]},
-    "6_10": {'Built': None, 'connected_roads':[]},
-    "7_11": {'Built': None, 'connected_roads':[]},
-    "8_12": {'Built': None, 'connected_roads':[]},
-    "8_13": {'Built': None, 'connected_roads':[]},
-    "9_13": {'Built': None, 'connected_roads':[]},
-    "9_14": {'Built': None, 'connected_roads':[]},
-    "10_14": {'Built': None, 'connected_roads':[]},
-    "10_15": {'Built': None, 'connected_roads':[]},
-    "11_15": {'Built': None, 'connected_roads':[]},
-    "11_16": {'Built': None, 'connected_roads':[]},
-    "12_17": {'Built': None, 'connected_roads':[]},
-    "13_18": {'Built': None, 'connected_roads':[]},
-    "14_19": {'Built': None, 'connected_roads':[]},
-    "15_20": {'Built': None, 'connected_roads':[]},
-    "16_21": {'Built': None, 'connected_roads':[]},
-    "17_22": {'Built': None, 'connected_roads':[]},
-    "17_23": {'Built': None, 'connected_roads':[]},
-    "18_23": {'Built': None, 'connected_roads':[]},
-    "18_24": {'Built': None, 'connected_roads':[]},
-    "19_24": {'Built': None, 'connected_roads':[]},
-    "19_25": {'Built': None, 'connected_roads':[]},
-    "20_25": {'Built': None, 'connected_roads':[]},
-    "20_26": {'Built': None, 'connected_roads':[]},
-    "21_26": {'Built': None, 'connected_roads':[]},
-    "21_27": {'Built': None, 'connected_roads':[]},
-    "22_28": {'Built': None, 'connected_roads':[]},
-    "23_29": {'Built': None, 'connected_roads':[]},
-    "24_30": {'Built': None, 'connected_roads':[]},
-    "25_31": {'Built': None, 'connected_roads':[]},
-    "26_32": {'Built': None, 'connected_roads':[]},
-    "27_33": {'Built': None, 'connected_roads':[]},
-    "28_34": {'Built': None, 'connected_roads':[]},
-    "29_34": {'Built': None, 'connected_roads':[]},
-    "29_35": {'Built': None, 'connected_roads':[]},
-    "30_35": {'Built': None, 'connected_roads':[]},
-    "30_36": {'Built': None, 'connected_roads':[]},
-    "31_36": {'Built': None, 'connected_roads':[]},
-    "31_37": {'Built': None, 'connected_roads':[]},
-    "21_37": {'Built': None, 'connected_roads':[]},
-    "32_38": {'Built': None, 'connected_roads':[]},
-    "33_38": {'Built': None, 'connected_roads':[]},
-    "34_39": {'Built': None, 'connected_roads':[]},
-    "35_40": {'Built': None, 'connected_roads':[]},
-    "36_41": {'Built': None, 'connected_roads':[]},
-    "37_42": {'Built': None, 'connected_roads':[]},
-    "38_43": {'Built': None, 'connected_roads':[]},
-    "39_44": {'Built': None, 'connected_roads':[]},
-    "40_44": {'Built': None, 'connected_roads':[]},
-    "40_45": {'Built': None, 'connected_roads':[]},
-    "41_45": {'Built': None, 'connected_roads':[]},
-    "41_46": {'Built': None, 'connected_roads':[]},
-    "42_46": {'Built': None, 'connected_roads':[]},
-    "42_47": {'Built': None, 'connected_roads':[]},
-    "43_47": {'Built': None, 'connected_roads':[]},
-    "44_48": {'Built': None, 'connected_roads':[]},
-    "45_49": {'Built': None, 'connected_roads':[]},
-    "46_50": {'Built': None, 'connected_roads':[]},
-    "47_51": {'Built': None, 'connected_roads':[]},
-    "48_52": {'Built': None, 'connected_roads':[]},
-    "49_52": {'Built': None, 'connected_roads':[]},
-    "49_53": {'Built': None, 'connected_roads':[]},
-    "50_54": {'Built': None, 'connected_roads':[]},
-    "51_54": {'Built': None, 'connected_roads':[]}
+    '1_4': {'built': None, 'connected_roads':  ['1_5', '4_8']},
+    '1_5': {'built': None, 'connected_roads':  ['1_4', '2_5', '5_9']},
+    '2_5': {'built': None, 'connected_roads':  ['2_6', '1_5', '5_9']},
+    '2_6': {'built': None, 'connected_roads':  ['2_5', '3_6', '6_10']},
+    '3_6': {'built': None, 'connected_roads':  ['3_7', '2_6', '6_10']},
+    '3_7': {'built': None, 'connected_roads':  ['3_6', '7_11']},
+    '4_8': {'built': None, 'connected_roads':  ['1_4', '8_12', '8_13']},
+    '5_9': {'built': None, 'connected_roads':  ['1_5', '2_5', '9_13', '9_14']},
+    '6_10': {'built': None, 'connected_roads':  ['3_6', '2_6', '10_14', '10_15']},
+    '7_11': {'built': None, 'connected_roads':  ['3_7', '11_16', '11_15']},
+    '8_12': {'built': None, 'connected_roads':  ['8_13', '4_8', '12_17']},
+    '8_13': {'built': None, 'connected_roads':  ['8_12', '4_8', '13_18', '9_13']},
+    '9_13': {'built': None, 'connected_roads':  ['5_9', '9_14', '8_13', '13_18']},
+    '9_14': {'built': None, 'connected_roads':  ['5_9', '9_13', '14_19', '10_14']},
+    '10_14': {'built': None, 'connected_roads':  ['10_15', '6_10', '14_19', '9_14']},
+    '10_15': {'built': None, 'connected_roads':  ['10_14', '6_10', '15_20', '11_15']},
+    '11_15': {'built': None, 'connected_roads':  ['7_11', '11_16', '10_15', '15_20']},
+    '11_16': {'built': None, 'connected_roads':  ['7_11', '11_15', '16_21']},
+    '12_17': {'built': None, 'connected_roads':  ['8_12', '17_23', '17_22']},
+    '13_18': {'built': None, 'connected_roads':  ['8_13', '9_13', '18_24', '18_23']},
+    '14_19': {'built': None, 'connected_roads':  ['10_14', '9_14', '19_24', '19_25']},
+    '15_20': {'built': None, 'connected_roads':  ['10_15', '11_15', '20_26', '20_25']},
+    '16_21': {'built': None, 'connected_roads':  ['11_16', '21_27', '21_26',]},
+    '17_22': {'built': None, 'connected_roads':  ['17_23', '12_17', '22_28']},
+    '17_23': {'built': None, 'connected_roads':  ['12_17', '17_22', '23_29', '18_23']},
+    '18_23': {'built': None, 'connected_roads':  ['13_18', '18_24', '23_29', '17_23']},
+    '18_24': {'built': None, 'connected_roads':  ['13_18', '18_23', '19_24', '24_30']},
+    '19_24': {'built': None, 'connected_roads':  ['19_25', '14_19', '18_24', '24_30']},
+    '19_25': {'built': None, 'connected_roads':  ['19_24', '14_19', '25_31', '20_25']},
+    '20_25': {'built': None, 'connected_roads':  ['20_26', '15_20', '19_25', '25_31']},
+    '20_26': {'built': None, 'connected_roads':  ['20_25', '15_20', '21_26', '26_32']},
+    '21_26': {'built': None, 'connected_roads':  ['21_27', '16_21', '20_26', '26_32']},
+    '21_27': {'built': None, 'connected_roads':  ['21_26', '16_21', '27_33']},
+    '22_28': {'built': None, 'connected_roads':  ['17_22', '28_34']},
+    '23_29': {'built': None, 'connected_roads':  ['17_23', '18_23', '29_34', '29_35']},
+    '24_30': {'built': None, 'connected_roads':  ['19_24', '18_24', '30_35', '30_36']},
+    '25_31': {'built': None, 'connected_roads':  ['19_25', '20_25', '31_37', '31_36']},
+    '26_32': {'built': None, 'connected_roads':  ['21_26', '20_26', '32_38']},
+    '27_33': {'built': None, 'connected_roads':  ['21_27', '33_38']},
+    '28_34': {'built': None, 'connected_roads':  ['22_28', '34_39', '29_34']},
+    '29_34': {'built': None, 'connected_roads':  ['23_29', '29_35', '28_34', '34_39']},
+    '29_35': {'built': None, 'connected_roads':  ['23_29', '29_34', '35_40', '30_35']},
+    '30_35': {'built': None, 'connected_roads':  ['24_30', '30_36', '35_40', '29_35']},
+    '30_36': {'built': None, 'connected_roads':  ['24_30', '30_35', '31_36', '36_41']},
+    '31_36': {'built': None, 'connected_roads':  ['25_31', '31_37', '30_36', '36_41']},
+    '31_37': {'built': None, 'connected_roads':  ['25_31', '31_36', '37_42']},
+    '32_38': {'built': None, 'connected_roads':  ['26_32', '38_43', '33_38']},
+    '33_38': {'built': None, 'connected_roads':  ['27_33', '32_38', '38_43']},
+    '34_39': {'built': None, 'connected_roads':  ['28_34', '29_34', '39_44']},
+    '35_40': {'built': None, 'connected_roads':  ['30_35', '29_35', '40_44', '40_45']},
+    '36_41': {'built': None, 'connected_roads':  ['31_36', '30_36', '41_45', '41_46']},
+    '37_42': {'built': None, 'connected_roads':  ['31_37', '42_47', '42_46']},
+    '38_43': {'built': None, 'connected_roads':  ['32_38', '33_38', '43_47']},
+    '39_44': {'built': None, 'connected_roads':  ['34_39', '44_48', '40_44']},
+    '40_44': {'built': None, 'connected_roads':  ['35_40', '40_45', '44_48', '39_44']},
+    '40_45': {'built': None, 'connected_roads':  ['35_40', '40_44', '41_45', '45_49']},
+    '41_45': {'built': None, 'connected_roads':  ['41_46', '36_41', '40_45', '45_49']},
+    '41_46': {'built': None, 'connected_roads':  ['41_45', '36_41', '46_50', '42_46']},
+    '42_46': {'built': None, 'connected_roads':  ['37_42', '42_47', '46_50', '41_46']},
+    '42_47': {'built': None, 'connected_roads':  ['37_42', '42_46', '43_47', '47_51']},
+    '43_47': {'built': None, 'connected_roads':  ['38_43', '47_51', '42_47']},
+    '44_48': {'built': None, 'connected_roads':  ['39_44', '40_44', '48_52']},
+    '45_49': {'built': None, 'connected_roads':  ['41_45', '40_45', '49_52', '49_53']},
+    '46_50': {'built': None, 'connected_roads':  ['41_46', '42_46', '50_54']},
+    '47_51': {'built': None, 'connected_roads':  ['43_47', '42_47', '51_54']},
+    '48_52': {'built': None, 'connected_roads':  ['44_48', '49_52']},
+    '49_52': {'built': None, 'connected_roads':  ['49_53', '45_49', '48_52']},
+    '49_53': {'built': None, 'connected_roads':  ['49_52', '45_49']},
+    '50_54': {'built': None, 'connected_roads':  ['46_50', '51_54']},
+    '51_54': {'built': None, 'connected_roads':  ['47_51', '50_54']}
+
 }
