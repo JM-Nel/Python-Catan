@@ -9,10 +9,16 @@
 #
 #   roads - lines that connect two plots
 #         - possible spaces where roads can be built
-#         -
+#
+#   hexes - represent the hexes (tiles) on the board
+#
+#   players -
+#
+#
 #
 #
 
+hexes_sorted = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S']
 
 plots = {
     '1': {
@@ -448,7 +454,7 @@ plots = {
     }
 }
 
-tiles = {
+hexes = {
     'A': {'number': None,
           'resource': None,
           'robber': None,
@@ -977,7 +983,10 @@ players = {'1': {
     'colour': None,
     'name': None,
     'Points': 0,
+    'unplayed dev cards': [],
+    'played dev cards': [],
     'resources': {'wood': 0,
+                  'wheat':0,
                   'ore': 0,
                   'brick': 0,
                   'sheep': 0,
@@ -989,7 +998,10 @@ players = {'1': {
         'colour': None,
         'name': None,
         'Points': 0,
+        'unplayed dev cards': [],
+        'played dev cards': [],
         'resources': {'wood': 0,
+                      'wheat':0,
                       'ore': 0,
                       'brick': 0,
                       'sheep': 0,
@@ -1001,7 +1013,10 @@ players = {'1': {
         'colour': None,
         'name': None,
         'Points': 0,
+        'unplayed dev cards': [],
+        'played dev cards': [],
         'resources': {'wood': 0,
+                      'wheat':0,
                       'ore': 0,
                       'brick': 0,
                       'sheep': 0,
@@ -1013,10 +1028,48 @@ players = {'1': {
         'colour': None,
         'name': None,
         'Points': 0,
+        'unplayed dev cards': [],
+        'played dev cards': [],
         'resources': {'wood': 0,
+                      'wheat':0,
                       'ore': 0,
                       'brick': 0,
                       'sheep': 0,
                       },
 
     }}
+
+dev_cards = []
+
+def create_dev_cards():
+    devies = []
+    devies.append(['knight'] * 14)
+    devies.append(['victory point'] * 5)
+    devies.append(['road builder'] *2)
+    devies.append(['year of plenty'] * 2)
+    devies.append(['monopoly'] * 2)
+    for listie in devies:
+        for card in listie:
+            dev_cards.append(card)
+
+
+colours = ['green', 'blue', 'white', 'orange']
+
+resource_tiles = []
+
+def create_resource_hexes():
+    tilos = []
+    tilos.append(['desert'])
+    tilos.append(['ore'] * 3)
+    tilos.append(['brick'] * 3)
+    tilos.append(['wheat'] * 4)
+    tilos.append(['wood'] * 4)
+    tilos.append(['sheep'] * 4)
+    for tile in tilos:
+        for ti in tile:
+            resource_tiles.append(ti)
+
+create_dev_cards()
+create_resource_hexes()
+
+numbers = [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12]
