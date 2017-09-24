@@ -979,7 +979,6 @@ roads = {
 }
 
 players = {'1': {
-    'playing': False,
     'colour': None,
     'name': None,
     'Points': 0,
@@ -994,7 +993,6 @@ players = {'1': {
 
 },
     '2': {
-        'playing': False,
         'colour': None,
         'name': None,
         'Points': 0,
@@ -1009,7 +1007,6 @@ players = {'1': {
 
     },
     '3': {
-        'playing': False,
         'colour': None,
         'name': None,
         'Points': 0,
@@ -1024,7 +1021,6 @@ players = {'1': {
 
     },
     '4': {
-        'playing': False,
         'colour': None,
         'name': None,
         'Points': 0,
