@@ -47,7 +47,7 @@ def can_build_road_here(road, player_no):
         return False
 
 def can_build_house_here(plot, player_no):
-    plots[plot]['house'] == None and plots[plot]['city'] == None and correct_road_connected_to_plot(plot, player_no) and no_house_nearby(plot)
+    return plots[plot]['house'] == None and plots[plot]['city'] == None and correct_road_connected_to_plot(plot, player_no) and no_house_nearby(plot)
 
 def roll_2_dice():
     return randint(1, 6) + randint(1, 6)
@@ -55,16 +55,18 @@ def roll_2_dice():
 def roll_1_di():
     return randint(1, 6)
 
+def player_to_play(round_counter, no_of_players):
+    return round_counter % no_of_players
+
 
 # Command line catan - Will rewrite these for the GUI
 
-no_of_players = None
-round_counter = None
 
 def initial_setup():
-
+    global no_of_players
     while 1:
         try:
+
             no_of_players = int(raw_input('How many players will play? '))
             assert no_of_players >= 2 and no_of_players <= 4
             break
@@ -111,10 +113,9 @@ def initial_setup():
 
     time.sleep(2)
 
-def player_to_play(round_counter):
-    return player_to_play(round_counter % no_of_players)
 
-def checking_who_begins():
+    #Checking who begins
+
     print "dice roll to see who's to begin the placing"
     peoples_to_roll = []
     for player in players:
@@ -141,29 +142,33 @@ def checking_who_begins():
         else:
             print "There's a tie"
             for person in peoples_to_roll:
-                print players[person]['    name']
+                print players[person]['name']
             print "Needs to roll again"
 
     best_roller = peoples_to_roll[0]
     print '%s had the best roll with %s, and will begin' % (players[best_roller]['name'], best_roll)
     round_counter = int(best_roller)
 
-def initial_house_placement():
-    for i in range(2):
+    #do the initial placement
+    '''
+    for round_no in range(2):
         way = -1
         way *= -1
         for i in range(len(players)[::way]):
+            player_to_place = player_to_play(round_counter, no_of_players)
             while 1:
-                house_placement = raw_input('%s, please make your first house placement') % players[str(round_counter)]['name']
+                house_placement = raw_input('%s, please make your house placement') % players[player_to_place]['name']
                 try:
                     assert plots[house_placement]['house'] == None
-                    assert no_house_nearby(house_placement) == True
+                    assert no_house_nearby(house_placement)
                     break
                 except:
                     print "You can't built here, please try again."
 
-                plots[house_placement]['house'] = str(round_counter)
-                print '%s Made a placement at plot no %s' % (players[str(round_counter)]['name'], house_placement)
+            plots[house_placement]['house'] = player_to_place
+            print '%s Made a placement at plot no %s' % (players[player_to_place]['name'], house_placement)
+
+            if round_counter == 2:
+                print "%s, you receive the rou"'''
 
 initial_setup()
-checking_who_begins()
