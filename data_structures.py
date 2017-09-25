@@ -20,6 +20,9 @@
 
 hexes_sorted = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S']
 
+no_of_players = None
+round_counter = None
+
 plots = {
     '1': {
         'house': None,
