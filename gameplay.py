@@ -56,11 +56,14 @@ def roll_1_di():
     return randint(1, 6)
 
 def player_to_play(round_counter, no_of_players):
-    return round_counter % no_of_players
+    player = round_counter % no_of_players
+    if player is 0:
+        return str(no_of_players)
+    else:
+        return str(round_counter % no_of_players)
 
 
 # Command line catan - Will rewrite these for the GUI
-
 
 def initial_setup():
     global no_of_players
@@ -80,7 +83,7 @@ def initial_setup():
 
     for i in range(1, no_of_players + 1):
         players[str(i)]['name'] = raw_input('Please enter the name for player %s ' % i)
-        print '%s, available colours are:' % players[str(i)]['name']
+        print '%s, available colours are: ' % players[str(i)]['name']
         for x in colours:
             print x
         while 1:
@@ -148,16 +151,20 @@ def initial_setup():
     best_roller = peoples_to_roll[0]
     print '%s had the best roll with %s, and will begin' % (players[best_roller]['name'], best_roll)
     round_counter = int(best_roller)
+    players_placing = []
+    counter = int(best_roller)
+    for i in players:
+        players_placing.append(player_to_play(counter, no_of_players))
+        counter += 1
 
     #do the initial placement
-    '''
-    for round_no in range(2):
-        way = -1
+
+    way = -1
+    for placement_round in range(2):
         way *= -1
-        for i in range(len(players)[::way]):
-            player_to_place = player_to_play(round_counter, no_of_players)
+        for player_to_place in players_placing[::way]:
             while 1:
-                house_placement = raw_input('%s, please make your house placement') % players[player_to_place]['name']
+                house_placement = raw_input('%s, please make your house placement' % players[player_to_place]['name'])
                 try:
                     assert plots[house_placement]['house'] == None
                     assert no_house_nearby(house_placement)
@@ -168,7 +175,20 @@ def initial_setup():
             plots[house_placement]['house'] = player_to_place
             print '%s Made a placement at plot no %s' % (players[player_to_place]['name'], house_placement)
 
-            if round_counter == 2:
-                print "%s, you receive the rou"'''
+            if placement_round == 1:
+                for tile in hexes:
+                    if hexes[tile]['resource'] == 'desert':
+                        continue
+                    if house_placement in hexes[tile]['plots']:
+                        players[player_to_place]['resources'][hexes[tile]['resource']] += 1
+                        print "%s has received 1 %s" % (players[player_to_place]['name'], hexes[tile]['resource'])
+
+            round_counter += 1
+
+
+
+
 
 initial_setup()
+
+print players
