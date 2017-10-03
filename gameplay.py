@@ -183,12 +183,5 @@ def initial_setup():
                         players[player_to_place]['resources'][hexes[tile]['resource']] += 1
                         print "%s has received 1 %s" % (players[player_to_place]['name'], hexes[tile]['resource'])
 
-            round_counter += 1
-
-
-
-
 
 initial_setup()
-
-print players
