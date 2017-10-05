@@ -62,10 +62,24 @@ def player_to_play(round_counter, no_of_players):
     else:
         return str(round_counter % no_of_players)
 
+def check_house_connected_to_road(player, road):
+    for settlement in roads[road]['connected_plots']:
+        if plots[settlement]['house'] == player:
+            return True
+    return False
+
+
 
 # Command line catan - Will rewrite these for the GUI
 
+def print_scores():
+    print "Player scores are as follows: "
+    for player in players:
+        print '%s : %s' % (players[player]['name'], players[player]['score'])
+
+
 def initial_setup():
+
     global no_of_players
     while 1:
         try:
@@ -116,7 +130,6 @@ def initial_setup():
 
     time.sleep(2)
 
-
     #Checking who begins
 
     print "dice roll to see who's to begin the placing"
@@ -145,11 +158,11 @@ def initial_setup():
         else:
             print "There's a tie"
             for person in peoples_to_roll:
-                print players[person]['name']
+                print ' ' + players[person]['name']
             print "Needs to roll again"
 
     best_roller = peoples_to_roll[0]
-    print '%s had the best roll with %s, and will begin' % (players[best_roller]['name'], best_roll)
+    print '%s had the highest roll with %s, and will begin' % (players[best_roller]['name'], best_roll)
     round_counter = int(best_roller)
     players_placing = []
     counter = int(best_roller)
@@ -157,23 +170,38 @@ def initial_setup():
         players_placing.append(player_to_play(counter, no_of_players))
         counter += 1
 
-    #do the initial placement
+    #do the initial settlement and road placement
+
+    #house placement part
 
     way = -1
     for placement_round in range(2):
         way *= -1
         for player_to_place in players_placing[::way]:
             while 1:
-                house_placement = raw_input('%s, please make your house placement' % players[player_to_place]['name'])
+                house_placement = raw_input('%s, please make your house placement ' % players[player_to_place]['name'])
                 try:
                     assert plots[house_placement]['house'] == None
                     assert no_house_nearby(house_placement)
                     break
-                except:
+                except AssertionError:
                     print "You can't built here, please try again."
 
+            # Do road placements
+            while 1:
+                try:
+                    print '%s, please make your road placement. \n Options are: ' % players[player_to_place]['name']
+                    for road in plots[house_placement]['connected_roads']:
+                        print ' ' + road
+                    road_placement = raw_input('%s, please select one of these roads ' % players[player_to_place]['name'])
+                    assert road_placement in plots[house_placement]['connected_roads']
+                    break
+                except AssertionError:
+                    print 'Selected road is not one of the available options '
+
             plots[house_placement]['house'] = player_to_place
-            print '%s Made a placement at plot no %s' % (players[player_to_place]['name'], house_placement)
+            roads[road_placement]['built'] = player_to_place
+            print '%s Made a placement at plot no %s and a road placement at road %s ' % (players[player_to_place]['name'], house_placement, road_placement)
 
             if placement_round == 1:
                 for tile in hexes:
@@ -181,7 +209,16 @@ def initial_setup():
                         continue
                     if house_placement in hexes[tile]['plots']:
                         players[player_to_place]['resources'][hexes[tile]['resource']] += 1
-                        print "%s has received 1 %s" % (players[player_to_place]['name'], hexes[tile]['resource'])
+                        print "%s received 1 %s" % (players[player_to_place]['name'], hexes[tile]['resource'])
+
+    for player in players:
+        players[player]['score'] += 2
+
+    print_scores()
+    return round_counter
+
+
+
 
 
 initial_setup()
