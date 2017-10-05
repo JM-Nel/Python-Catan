@@ -120,6 +120,7 @@ roads_dic = {
 '30_36': ['30', '36'],
 '31_36': ['31', '36'],
 '31_37': ['31', '37'],
+'32_37': ['32', '37'],
 '32_38': ['32', '38'],
 '33_38': ['33', '38'],
 '34_39': ['34', '39'],
@@ -150,7 +151,6 @@ roads_dic = {
 def generate_road_code():
     for main_key in roads_ordered:
         connected = []
-        lines = []
         for main_erf in roads_dic[main_key]:
             for check_key in roads_dic:
                 if main_key == check_key:
@@ -175,11 +175,11 @@ def generate_plot_code():
 
 
 
-        print "    '%s':{ \n        'house': None,\n        'city': None,\n        'connected_roads': %s,\n        'connected_houses': %s, \n        'harbour':None\n        },\n" %(i, connected_roads, connected_houses)
+        print "    '%s':{ \n        'house': None,\n        'city': None,\n        'connected_roads': %s,\n        'connected_plots': %s, \n        'harbour':None\n        },\n" %(i, connected_roads, connected_houses)
 
 
-#generate_plot_code()
-generate_road_code()
+generate_plot_code()
+#generate_road_code()
 
 
 

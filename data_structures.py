@@ -24,438 +24,439 @@ no_of_players = None
 round_counter = None
 
 plots = {
-    '1': {
+    '1':{
         'house': None,
         'city': None,
         'connected_roads': ['1_5', '1_4'],
         'connected_plots': ['5', '4'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '2': {
+    '2':{
         'house': None,
         'city': None,
         'connected_roads': ['2_5', '2_6'],
         'connected_plots': ['5', '6'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '3': {
+    '3':{
         'house': None,
         'city': None,
         'connected_roads': ['3_7', '3_6'],
         'connected_plots': ['7', '6'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '4': {
+    '4':{
         'house': None,
         'city': None,
         'connected_roads': ['1_4', '4_8'],
         'connected_plots': ['1', '8'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '5': {
+    '5':{
         'house': None,
         'city': None,
         'connected_roads': ['1_5', '2_5', '5_9'],
         'connected_plots': ['1', '2', '9'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '6': {
+    '6':{
         'house': None,
         'city': None,
         'connected_roads': ['3_6', '2_6', '6_10'],
         'connected_plots': ['3', '2', '10'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '7': {
+    '7':{
         'house': None,
         'city': None,
         'connected_roads': ['3_7', '7_11'],
         'connected_plots': ['3', '11'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '8': {
+    '8':{
         'house': None,
         'city': None,
         'connected_roads': ['8_12', '8_13', '4_8'],
         'connected_plots': ['12', '13', '4'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '9': {
+    '9':{
         'house': None,
         'city': None,
         'connected_roads': ['5_9', '9_13', '9_14'],
         'connected_plots': ['5', '13', '14'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '10': {
+    '10':{
         'house': None,
         'city': None,
         'connected_roads': ['10_14', '10_15', '6_10'],
         'connected_plots': ['14', '15', '6'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '11': {
+    '11':{
         'house': None,
         'city': None,
         'connected_roads': ['7_11', '11_16', '11_15'],
         'connected_plots': ['7', '16', '15'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '12': {
+    '12':{
         'house': None,
         'city': None,
         'connected_roads': ['8_12', '12_17'],
         'connected_plots': ['8', '17'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '13': {
+    '13':{
         'house': None,
         'city': None,
         'connected_roads': ['8_13', '13_18', '9_13'],
         'connected_plots': ['8', '18', '9'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '14': {
+    '14':{
         'house': None,
         'city': None,
         'connected_roads': ['14_19', '10_14', '9_14'],
         'connected_plots': ['19', '10', '9'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '15': {
+    '15':{
         'house': None,
         'city': None,
         'connected_roads': ['10_15', '15_20', '11_15'],
         'connected_plots': ['10', '20', '11'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '16': {
+    '16':{
         'house': None,
         'city': None,
         'connected_roads': ['16_21', '11_16'],
         'connected_plots': ['21', '11'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '17': {
+    '17':{
         'house': None,
         'city': None,
         'connected_roads': ['17_23', '12_17', '17_22'],
         'connected_plots': ['23', '12', '22'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '18': {
+    '18':{
         'house': None,
         'city': None,
         'connected_roads': ['13_18', '18_24', '18_23'],
         'connected_plots': ['13', '24', '23'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '19': {
+    '19':{
         'house': None,
         'city': None,
         'connected_roads': ['19_24', '19_25', '14_19'],
         'connected_plots': ['24', '25', '14'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '20': {
+    '20':{
         'house': None,
         'city': None,
         'connected_roads': ['20_26', '20_25', '15_20'],
         'connected_plots': ['26', '25', '15'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '21': {
+    '21':{
         'house': None,
         'city': None,
         'connected_roads': ['21_27', '21_26', '16_21'],
         'connected_plots': ['27', '26', '16'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '22': {
+    '22':{
         'house': None,
         'city': None,
         'connected_roads': ['22_28', '17_22'],
         'connected_plots': ['28', '17'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '23': {
+    '23':{
         'house': None,
         'city': None,
         'connected_roads': ['23_29', '17_23', '18_23'],
         'connected_plots': ['29', '17', '18'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '24': {
+    '24':{
         'house': None,
         'city': None,
         'connected_roads': ['19_24', '18_24', '24_30'],
         'connected_plots': ['19', '18', '30'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '25': {
+    '25':{
         'house': None,
         'city': None,
         'connected_roads': ['19_25', '25_31', '20_25'],
         'connected_plots': ['19', '31', '20'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '26': {
+    '26':{
         'house': None,
         'city': None,
         'connected_roads': ['21_26', '20_26', '26_32'],
         'connected_plots': ['21', '20', '32'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '27': {
+    '27':{
         'house': None,
         'city': None,
         'connected_roads': ['21_27', '27_33'],
         'connected_plots': ['21', '33'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '28': {
+    '28':{
         'house': None,
         'city': None,
         'connected_roads': ['28_34', '22_28'],
         'connected_plots': ['34', '22'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '29': {
+    '29':{
         'house': None,
         'city': None,
         'connected_roads': ['23_29', '29_34', '29_35'],
         'connected_plots': ['23', '34', '35'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '30': {
+    '30':{
         'house': None,
         'city': None,
         'connected_roads': ['24_30', '30_35', '30_36'],
         'connected_plots': ['24', '35', '36'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '31': {
+    '31':{
         'house': None,
         'city': None,
         'connected_roads': ['25_31', '31_37', '31_36'],
         'connected_plots': ['25', '37', '36'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '32': {
+    '32':{
         'house': None,
         'city': None,
-        'connected_roads': ['32_38', '26_32'],
-        'connected_plots': ['38', '26'],
-        'harbour': None
-    },
+        'connected_roads': ['32_38', '32_37', '26_32'],
+        'connected_plots': ['38', '37', '26'],
+        'harbour':None
+        },
 
-    '33': {
+    '33':{
         'house': None,
         'city': None,
         'connected_roads': ['27_33', '33_38'],
         'connected_plots': ['27', '38'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '34': {
+    '34':{
         'house': None,
         'city': None,
         'connected_roads': ['28_34', '34_39', '29_34'],
         'connected_plots': ['28', '39', '29'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '35': {
+    '35':{
         'house': None,
         'city': None,
         'connected_roads': ['35_40', '30_35', '29_35'],
         'connected_plots': ['40', '30', '29'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '36': {
+    '36':{
         'house': None,
         'city': None,
         'connected_roads': ['31_36', '30_36', '36_41'],
         'connected_plots': ['31', '30', '41'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '37': {
+    '37':{
         'house': None,
         'city': None,
-        'connected_roads': ['37_42', '31_37'],
-        'connected_plots': ['42', '31'],
-        'harbour': None
-    },
+        'connected_roads': ['37_42', '32_37', '31_37'],
+        'connected_plots': ['42', '32', '31'],
+        'harbour':None
+        },
 
-    '38': {
+    '38':{
         'house': None,
         'city': None,
         'connected_roads': ['32_38', '38_43', '33_38'],
         'connected_plots': ['32', '43', '33'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '39': {
+    '39':{
         'house': None,
         'city': None,
         'connected_roads': ['39_44', '34_39'],
         'connected_plots': ['44', '34'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '40': {
+    '40':{
         'house': None,
         'city': None,
         'connected_roads': ['35_40', '40_44', '40_45'],
         'connected_plots': ['35', '44', '45'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '41': {
+    '41':{
         'house': None,
         'city': None,
         'connected_roads': ['41_45', '41_46', '36_41'],
         'connected_plots': ['45', '46', '36'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '42': {
+    '42':{
         'house': None,
         'city': None,
         'connected_roads': ['37_42', '42_47', '42_46'],
         'connected_plots': ['37', '47', '46'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '43': {
+    '43':{
         'house': None,
         'city': None,
         'connected_roads': ['43_47', '38_43'],
         'connected_plots': ['47', '38'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '44': {
+    '44':{
         'house': None,
         'city': None,
         'connected_roads': ['44_48', '39_44', '40_44'],
         'connected_plots': ['48', '39', '40'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '45': {
+    '45':{
         'house': None,
         'city': None,
         'connected_roads': ['41_45', '40_45', '45_49'],
         'connected_plots': ['41', '40', '49'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '46': {
+    '46':{
         'house': None,
         'city': None,
         'connected_roads': ['46_50', '41_46', '42_46'],
         'connected_plots': ['50', '41', '42'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '47': {
+    '47':{
         'house': None,
         'city': None,
         'connected_roads': ['43_47', '47_51', '42_47'],
         'connected_plots': ['43', '51', '42'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '48': {
+    '48':{
         'house': None,
         'city': None,
         'connected_roads': ['44_48', '48_52'],
         'connected_plots': ['44', '52'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '49': {
+    '49':{
         'house': None,
         'city': None,
         'connected_roads': ['49_52', '49_53', '45_49'],
         'connected_plots': ['52', '53', '45'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '50': {
+    '50':{
         'house': None,
         'city': None,
         'connected_roads': ['46_50', '50_54', '50_53'],
         'connected_plots': ['46', '54', '53'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '51': {
+    '51':{
         'house': None,
         'city': None,
         'connected_roads': ['51_54', '47_51'],
         'connected_plots': ['54', '47'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '52': {
+    '52':{
         'house': None,
         'city': None,
         'connected_roads': ['49_52', '48_52'],
         'connected_plots': ['49', '48'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '53': {
+    '53':{
         'house': None,
         'city': None,
         'connected_roads': ['50_53', '49_53'],
         'connected_plots': ['50', '49'],
-        'harbour': None
-    },
+        'harbour':None
+        },
 
-    '54': {
+    '54':{
         'house': None,
         'city': None,
         'connected_roads': ['51_54', '50_54'],
         'connected_plots': ['51', '50'],
-        'harbour': None
+        'harbour':None
+        }
     }
-}
+
 
 hexes = {
     'A': {'number': None,
@@ -984,7 +985,7 @@ roads = {
 players = {'1': {
     'colour': None,
     'name': None,
-    'Points': 0,
+    'score': 0,
     'unplayed dev cards': [],
     'played dev cards': [],
     'resources': {'wood': 0,
@@ -998,7 +999,7 @@ players = {'1': {
     '2': {
         'colour': None,
         'name': None,
-        'Points': 0,
+        'score': 0,
         'unplayed dev cards': [],
         'played dev cards': [],
         'resources': {'wood': 0,
@@ -1012,7 +1013,7 @@ players = {'1': {
     '3': {
         'colour': None,
         'name': None,
-        'Points': 0,
+        'score': 0,
         'unplayed dev cards': [],
         'played dev cards': [],
         'resources': {'wood': 0,
@@ -1026,7 +1027,7 @@ players = {'1': {
     '4': {
         'colour': None,
         'name': None,
-        'Points': 0,
+        'score': 0,
         'unplayed dev cards': [],
         'played dev cards': [],
         'resources': {'wood': 0,
