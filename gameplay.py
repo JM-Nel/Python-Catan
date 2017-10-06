@@ -174,10 +174,8 @@ def initial_setup():
 
     #house placement part
 
-    way = -1
-    for placement_round in range(2):
-        way *= -1
-        for player_to_place in players_placing[::way]:
+    for placement_way in [1, -1]:
+        for player_to_place in players_placing[::placement_way]:
             while 1:
                 house_placement = raw_input('%s, please make your house placement ' % players[player_to_place]['name'])
                 try:
@@ -203,7 +201,7 @@ def initial_setup():
             roads[road_placement]['built'] = player_to_place
             print '%s Made a placement at plot no %s and a road placement at road %s ' % (players[player_to_place]['name'], house_placement, road_placement)
 
-            if placement_round == 1:
+            if placement_way == -1:
                 for tile in hexes:
                     if hexes[tile]['resource'] == 'desert':
                         continue
