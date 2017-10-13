@@ -68,6 +68,10 @@ def check_house_connected_to_road(player, road):
             return True
     return False
 
+def enough_resources_to_build(player, item):
+    pass
+
+
 
 
 # Command line catan - Will rewrite these for the GUI
@@ -76,6 +80,10 @@ def print_scores():
     print "Player scores are as follows: "
     for player in players:
         print '%s : %s' % (players[player]['name'], players[player]['score'])
+
+def print_list(_list):
+    for entry in _list:
+        print entry
 
 
 def initial_setup():
@@ -98,8 +106,7 @@ def initial_setup():
     for i in range(1, no_of_players + 1):
         players[str(i)]['name'] = raw_input('Please enter the name for player %s ' % i)
         print '%s, available colours are: ' % players[str(i)]['name']
-        for x in colours:
-            print x
+        print_list(colours)
         while 1:
             try:
                 colour_selected = raw_input('Please select a colour ')
@@ -109,8 +116,7 @@ def initial_setup():
                 break
             except:
                 print 'Selected colour is not one of the available colours. \nColours currently available: '
-                for x in colours:
-                    print x
+                print_list(colours)
 
     print 'Players and colours are as follows:'
     for player in players:
@@ -182,7 +188,7 @@ def initial_setup():
                     assert plots[house_placement]['house'] == None
                     assert no_house_nearby(house_placement)
                     break
-                except AssertionError:
+                except:
                     print "You can't built here, please try again."
 
             # Do road placements
@@ -194,7 +200,7 @@ def initial_setup():
                     road_placement = raw_input('%s, please select one of these roads ' % players[player_to_place]['name'])
                     assert road_placement in plots[house_placement]['connected_roads']
                     break
-                except AssertionError:
+                except:
                     print 'Selected road is not one of the available options '
 
             plots[house_placement]['house'] = player_to_place
@@ -214,9 +220,5 @@ def initial_setup():
 
     print_scores()
     return round_counter
-
-
-
-
 
 initial_setup()
